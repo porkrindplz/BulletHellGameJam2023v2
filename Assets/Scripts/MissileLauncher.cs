@@ -36,6 +36,17 @@ public class MissileLauncher : MonoBehaviour
         Straight,
         None
     }
+    private void Awake()
+    {
+        InitData();
+    }
+    void InitData()
+    {
+        foreach (CharacterDialogue dialogue in lazerDialogue)
+        {
+            dialogue.complete = false;
+        }
+    }
     private void Start()
     {
         if (gameObject.name == "Enemy")

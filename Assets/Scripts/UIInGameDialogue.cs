@@ -6,7 +6,7 @@ using TMPro;
 
 public class UIInGameDialogue : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI characterName;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] Image portrait;
     UIOpenDialogueWindow dialogueWindow;
@@ -34,7 +34,7 @@ public class UIInGameDialogue : MonoBehaviour
         {
             yield return new WaitForSeconds(0.3f);
             portrait.sprite = characterDialogue.characterToTalk.character.portrait;
-            name.text = characterDialogue.characterToTalk.character.name;
+            characterName.text = characterDialogue.characterToTalk.character.characterName;
             text.text = characterDialogue.dialogue;
             dialogueWindow.ActivateDialogue(true);
             yield return new WaitForSeconds(characterDialogue.textTime - .6f);

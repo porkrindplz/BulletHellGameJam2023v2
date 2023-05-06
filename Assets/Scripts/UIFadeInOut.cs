@@ -8,10 +8,12 @@ public class UIFadeInOut : MonoBehaviour
 {
     public bool fadeInOnStart;
     public float fadeInTime;
+    [SerializeField] GameObject childToActivate;
 
     private void Start()
     {
         if (fadeInOnStart) FadeIn(fadeInTime);
+        if (childToActivate != null) childToActivate.SetActive(false);
     }
 
     public void FadeIn(float fadeDuration)
@@ -45,6 +47,10 @@ public class UIFadeInOut : MonoBehaviour
             panelImage.color = panelColor;
 
             yield return null;
+        }
+        if (childToActivate != null)
+        {
+            childToActivate.SetActive(true);
         }
     }
 }

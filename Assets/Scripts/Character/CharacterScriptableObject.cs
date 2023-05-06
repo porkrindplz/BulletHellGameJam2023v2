@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Character
 {
-    public string name;
+    public string characterName;
     public Sprite portrait;
 }
 [CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObjects/CharacterScriptableObject")]

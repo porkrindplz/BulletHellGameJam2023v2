@@ -19,7 +19,7 @@ public class Lazer : MonoBehaviour
     LineRenderer line = null;
     RaycastHit hit;
     float currentLength = 0;
-    bool charged;
+    bool charged = false;
 
 
 
