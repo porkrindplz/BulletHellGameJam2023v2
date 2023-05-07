@@ -23,8 +23,20 @@ public class Health : MonoBehaviour
     public static event Action OnPlayerDeath;
     private void Awake()
     {
+        InitData();
+    }
+    void InitData(){
         playerDead = false;
         currentHealth = initHealth;
+        deathDialogue.complete = false;
+        foreach (CharacterDialogue dialogue in halfHealthDialogue)
+        {
+            dialogue.complete = false;
+        }
+        foreach (CharacterDialogue dialogue in almostDeadDialogue)
+        {
+            dialogue.complete = false;
+        }
     }
     public float GetHealth()
     {

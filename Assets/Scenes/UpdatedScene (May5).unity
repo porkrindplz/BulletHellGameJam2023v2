@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 438d250f242cca74e87f2e79e5f2f2ce, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.000017033923, g: 0.000000025772884, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,7 +187,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.44558308, b: 0.44558308, a: 1}
+  m_Color: {r: 1, g: 0.72601056, b: 0.703504, a: 1}
   m_Intensity: 6
   m_Range: 42.96
   m_SpotAngle: 64.667984
@@ -368,7 +368,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.44558308, b: 0.44558308, a: 1}
+  m_Color: {r: 1, g: 0.72601056, b: 0.703504, a: 1}
   m_Intensity: 300
   m_Range: 42.96
   m_SpotAngle: 64.667984
@@ -483,7 +483,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.44558308, b: 0.44558308, a: 1}
+  m_Color: {r: 1, g: 0.72601056, b: 0.703504, a: 1}
   m_Intensity: 6
   m_Range: 42.96
   m_SpotAngle: 64.667984
@@ -604,7 +604,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.44558308, b: 0.44558308, a: 1}
+  m_Color: {r: 1, g: 0.72601056, b: 0.703504, a: 1}
   m_Intensity: 300
   m_Range: 42.96
   m_SpotAngle: 64.667984
@@ -779,6 +779,16 @@ PrefabInstance:
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 379135871}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: immediateAim
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
       propertyPath: cameraAimGroup
@@ -1478,6 +1488,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202307760715632236, guid: b79fa138ef747814a91dfa35f8aa1d09,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7202307760715632239, guid: b79fa138ef747814a91dfa35f8aa1d09,
         type: 3}

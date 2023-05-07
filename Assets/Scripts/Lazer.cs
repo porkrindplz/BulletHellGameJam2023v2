@@ -14,6 +14,7 @@ public class Lazer : MonoBehaviour
     [SerializeField] GameObject lazerStartEffect;
     [SerializeField] GameObject lazerFadeEffectPrefab;
     [SerializeField] float targetDelay = 2f;
+    [SerializeField] GameObject lazerLight;
     Vector3 targetPosition;
     float dealDamageCountdown = 0f;
     LineRenderer line = null;
@@ -37,12 +38,18 @@ public class Lazer : MonoBehaviour
         line.SetPosition(1, transform.position);
         transform.LookAt(GameObject.Find("Player").transform);
         StartCoroutine(ChargeUp(targetDelay));
+        if (lazerLight != null)
+        {
+            lazerLight.SetActive(true);
+            lazerLight.transform.position = transform.position;
+        }
     }
 
     void OnDisable()
     {
         //Instantiate(lazerFadeEffectPrefab, hit.point, Quaternion.identity);
         StopAllCoroutines();
+        if (lazerLight != null) lazerLight.SetActive(false);
         charged = false;
         line.SetPosition(0, transform.position);
         line.SetPosition(1, transform.position);
@@ -89,10 +96,14 @@ public class Lazer : MonoBehaviour
                 //     }
                 // }
                 line.SetPosition(1, hit.point);
+                if (lazerLight != null) lazerLight.transform.position = hit.point;
+
             }
             else
             {
-                line.SetPosition(1, transform.position + transform.forward * currentLength);
+                Vector3 currentPos = transform.position + transform.forward * currentLength;
+                line.SetPosition(1, currentPos);
+                if (lazerLight != null) lazerLight.transform.position = currentPos;
                 dealDamageCountdown = 0f;
                 lazerCollisionEffect.GetComponent<ParticleSystem>().Stop();
             }
