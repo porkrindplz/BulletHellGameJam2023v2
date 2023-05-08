@@ -10,10 +10,12 @@ public class MinigunRotation : MonoBehaviour
     [SerializeField] ParticleSystem bulletFire;
     [SerializeField] ParticleSystem bulletShells;
     [SerializeField] GameObject gunLight;
+    AudioSource playerAudio;
     bool lightActive = false;
 
     private void Start()
     {
+        playerAudio = gameObject.transform.root.GetComponent<AudioSource>();
         ParticleSystem.EmissionModule bulletFireEm = bulletFire.emission;
         ParticleSystem.EmissionModule bulletShellsEm = bulletShells.emission;
     }
@@ -23,15 +25,14 @@ public class MinigunRotation : MonoBehaviour
         {
             if (rotationActual < 1) rotationActual = 1;
             RotateMinigun();
-            lightActive = !lightActive;
-            gunLight.SetActive(lightActive);
-
         }
         else
         {
             SlowMinigun();
             lightActive = false;
             gunLight.SetActive(false);
+            if (playerAudio.isPlaying)
+                playerAudio.Stop();
         }
 
         transform.Rotate(0, 0, rotationActual);
@@ -49,6 +50,12 @@ public class MinigunRotation : MonoBehaviour
         else
         {
             StartEffects();
+            gunLight.SetActive(lightActive);
+            lightActive = !lightActive;
+            if (!playerAudio.isPlaying)
+            {
+                playerAudio.Play();
+            }
         }
 
     }

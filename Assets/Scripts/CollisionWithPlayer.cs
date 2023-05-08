@@ -13,4 +13,12 @@ public class CollisionWithPlayer : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.transform.root.GetComponent<Health>().DealDamage(1);
+            Destroy(gameObject);
+        }
+    }
 }

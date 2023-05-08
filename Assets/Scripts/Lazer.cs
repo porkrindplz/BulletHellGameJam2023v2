@@ -15,6 +15,7 @@ public class Lazer : MonoBehaviour
     [SerializeField] GameObject lazerFadeEffectPrefab;
     [SerializeField] float targetDelay = 2f;
     [SerializeField] GameObject lazerLight;
+    [SerializeField] AudioSource lazerAudio;
     Vector3 targetPosition;
     float dealDamageCountdown = 0f;
     LineRenderer line = null;
@@ -27,7 +28,8 @@ public class Lazer : MonoBehaviour
 
     private void Start()
     {
-
+        if (lazerAudio != null)
+            lazerAudio = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -43,6 +45,8 @@ public class Lazer : MonoBehaviour
             lazerLight.SetActive(true);
             lazerLight.transform.position = transform.position;
         }
+        if (lazerAudio != null)
+            lazerAudio.Play();
     }
 
     void OnDisable()

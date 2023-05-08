@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba36cd3e53db404baa84afa4e9662c9, type: 3}
+  m_Name: 5 1
+  m_EditorClassIdentifier: 
+  waveLength: 30
+  endingTimeBuffer: 2
+  waveElapsed: 0
+  waveStarted: 0
+  objectsToSpawn:
+  - objectID: 0
+    objectToSpawn: {fileID: 2273941340655759902, guid: 543b395e249d8fb4981c4912189befa8,
+      type: 3}
+    spawnType: 1
+    delayAtBeginningOfWave: 0
+    majorSpawnRate: 5
+    minorSpawnRate: 5
+  - objectID: 0
+    objectToSpawn: {fileID: 3663241531281818382, guid: 09c1ca116cd6abc4aba14635f0830002,
+      type: 3}
+    spawnType: 1
+    delayAtBeginningOfWave: 2.5
+    majorSpawnRate: 5
+    minorSpawnRate: 5
+  - objectID: 0
+    objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
+      type: 3}
+    spawnType: 0
+    delayAtBeginningOfWave: 5
+    majorSpawnRate: 1.25
+    minorSpawnRate: 1.25
+  characterDialogue: []

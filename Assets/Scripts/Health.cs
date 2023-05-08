@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     [SerializeField] CharacterDialogue deathDialogue;
     [SerializeField] CharacterDialogue[] halfHealthDialogue;
     [SerializeField] CharacterDialogue[] almostDeadDialogue;
+    [SerializeField] AudioSource healthAudio;
     bool temporarilyInvincible;
     float currentHealth = 0;
     bool playerDead;
@@ -25,7 +26,8 @@ public class Health : MonoBehaviour
     {
         InitData();
     }
-    void InitData(){
+    void InitData()
+    {
         playerDead = false;
         currentHealth = initHealth;
         deathDialogue.complete = false;
@@ -37,6 +39,11 @@ public class Health : MonoBehaviour
         {
             dialogue.complete = false;
         }
+    }
+    private void Start()
+    {
+        if (GetComponent<AudioSource>() != null && healthAudio == null)
+            healthAudio = GetComponent<AudioSource>();
     }
     public float GetHealth()
     {
@@ -105,21 +112,27 @@ public class Health : MonoBehaviour
         OnPlayerDeath.Invoke();
         yield return new WaitForSeconds(3);
         deathFadeOutUI.GetComponent<UIFadeInOut>().FadeOut(1);
-        yield return new WaitForSeconds(4);
-        ReloadScene();
     }
 
     IEnumerator FlashRed(GameObject objectToFlash, float time)
     {
 
         Renderer renderer = objectToFlash.GetComponent<Renderer>();
+        List<Color> prevColors = new List<Color>();
         //store current material color
-        Color prevColor = renderer.material.color;
+        for (int i = 0; i < renderer.materials.Length; i++)
+        {
+            prevColors.Add(renderer.materials[i].color);
+            renderer.materials[i].color = Color.red;
+        }
         //change current color to red
-        renderer.material.color = new Color(1, 0, 0);
+        //renderer.material.color = new Color(1, 0, 0);
         yield return new WaitForSeconds(time);
         //return color to stored material color
-        renderer.material.color = prevColor;
+        for (int i = 0; i < renderer.materials.Length; i++)
+        {
+            renderer.materials[i].color = prevColors[i];
+        }
         temporarilyInvincible = false;
     }
 }

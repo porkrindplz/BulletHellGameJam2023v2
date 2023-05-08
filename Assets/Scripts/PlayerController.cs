@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour
             AimDownSights(true);
         }
         else AimDownSights(false);
+        if (Input.GetKey(KeyCode.A))
+        {
+            Time.timeScale = 4;
+        }
+        else Time.timeScale = 1;
 
     }
     void FireControl()

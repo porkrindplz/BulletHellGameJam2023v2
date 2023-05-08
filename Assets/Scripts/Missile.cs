@@ -8,6 +8,7 @@ public class Missile : MonoBehaviour
     public float turnSpeed = 2f;
     Vector3 aimPoint;
     Transform rotationPoint;
+    Vector3 localOffset;
 
     [SerializeField] MovementMode movementMode;
     public enum MovementMode
@@ -26,6 +27,14 @@ public class Missile : MonoBehaviour
     [Header("Mode Settings: RotateAroundObject")]
     [SerializeField] float rotationSpeed;
 
+    private void Awake()
+    {
+        if (movementMode == MovementMode.RotateAroundObject)
+        {
+            rotationPoint = transform.parent;
+            localOffset = rotationPoint.position - transform.position;
+        }
+    }
     private void Start()
     {
         if (target == null)
@@ -43,10 +52,6 @@ public class Missile : MonoBehaviour
         if (movementMode == MovementMode.Straight)
         {
             aimPoint = target.position;
-        }
-        if (movementMode == MovementMode.RotateAroundObject)
-        {
-            rotationPoint = transform.parent;
         }
     }
     private void Update()
@@ -87,5 +92,6 @@ public class Missile : MonoBehaviour
     void RotateAroundObject(Transform rotationPoint)
     {
         transform.RotateAround(rotationPoint.position, transform.forward, rotationSpeed);
+        transform.position = rotationPoint.localPosition + localOffset;
     }
 }

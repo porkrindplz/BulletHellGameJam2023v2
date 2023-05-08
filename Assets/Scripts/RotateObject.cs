@@ -16,7 +16,7 @@ public class RotateObject : MonoBehaviour
 
     void Update()
     {
-
+        transform.Rotate(rotation * Time.deltaTime);
     }
     IEnumerator RemoveChildren()
     {

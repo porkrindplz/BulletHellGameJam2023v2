@@ -61,10 +61,9 @@ public class WaveManager : MonoBehaviour
     IEnumerator StartWave(int waveNum)
     {
         bool messageActive = true;
-        Debug.Log("MessageActive");
         while (messageActive)
         {
-            if (waves[waveNum].characterDialogue != null)
+            if (waves[waveNum].characterDialogue != null && GetComponent<MissileLauncher>().originalEnemyBase)
             {
                 for (int i = 0; i < waves[waveNum].characterDialogue.Length; i++)
                 {
@@ -75,10 +74,7 @@ public class WaveManager : MonoBehaviour
                 }
             }
             messageActive = false;
-            Debug.Log("MessageActive = false");
         }
-
-
         if (waveNum >= 1)
         {
             CloseDoors();
@@ -215,6 +211,10 @@ public class WaveManager : MonoBehaviour
         float rndForce = UnityEngine.Random.Range(1.5f, 3f);
         GameObject spawnedObj = Instantiate(spawnObject, spawnPos, spawnRot);
         spawnedObj.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * rndForce, ForceMode.Impulse);
+        if (spawnedObj.GetComponent<Missile>() != null)
+        {
+            spawnedObj.GetComponent<Missile>().target = GameObject.Find("Player").transform;
+        }
         Debug.Log("Instantiating Missile: " + spawnObject);
         EndForce(spawnedObj.GetComponent<Rigidbody>());
     }
@@ -234,5 +234,9 @@ public class WaveManager : MonoBehaviour
     public int GetWaveTotal()
     {
         return waves.Length;
+    }
+    public int GetActiveWave()
+    {
+        return activeWave;
     }
 }

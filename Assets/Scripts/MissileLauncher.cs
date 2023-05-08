@@ -26,6 +26,7 @@ public class MissileLauncher : MonoBehaviour
     [Header("MainEnemy Arrival Controls")]
     [SerializeField] Vector3 arrivalLocation = new Vector3(15, 25, 75);
     [SerializeField] float arrivalSpeed;
+    public bool originalEnemyBase;
     bool arrived = true;
     bool coolingDown;
 
@@ -49,7 +50,11 @@ public class MissileLauncher : MonoBehaviour
     }
     private void Start()
     {
-        if (gameObject.name == "Enemy")
+        if (target == null)
+        {
+            target = GameObject.Find("Player").transform;
+        }
+        if (gameObject.name == "Enemy" || !originalEnemyBase)
         {
             arrived = false;
             StartCoroutine(WarpArrival());
@@ -79,6 +84,23 @@ public class MissileLauncher : MonoBehaviour
         StartCoroutine(FireLazer(lazerInterval, lazerDuration, true));
     }
 
+    void SetActiveMissile()
+    {
+        if (missileType == MissileType.None) return;
+        if (missileType == MissileType.Wild)
+        {
+            activeMissile = wildMissilePrefab;
+        }
+        else if (missileType == MissileType.Spiral)
+        {
+            activeMissile = spiralMissilePrefab;
+        }
+        else if (missileType == MissileType.Straight)
+        {
+            activeMissile = straightMissilePrefab;
+        }
+    }
+
     IEnumerator FireMissile(GameObject currentMissile, float time)
     {
         coolingDown = true;
@@ -97,6 +119,8 @@ public class MissileLauncher : MonoBehaviour
     {
         foreach (GameObject firePoint in firePoints)
         {
+            if (activeMissile == null) SetActiveMissile();
+            Debug.Log("Active missile: " + activeMissile + " firepoint: " + firePoint);
             GameObject missileObject = Instantiate(activeMissile, firePoint.transform.position, firePoint.transform.rotation);
             missileObject.GetComponent<Missile>().target = target;
         }
@@ -106,23 +130,29 @@ public class MissileLauncher : MonoBehaviour
     {
         if (GetComponentInChildren<Animator>() != null)
         {
-            GetComponentInChildren<Animator>().SetTrigger("Lazer");
+            //GetComponentInChildren<Animator>().SetTrigger("Lazer");
         }
         if (waveNum == 1)
         {
-            Debug.Log("Adding Lazer Dialogues");
-            dialogueBox.Dialogue(lazerDialogue[0]);
-            for (int i = 1; i < lazerDialogue.Length - 1; i++)
+            if (originalEnemyBase)
             {
-                randomLazerDialogue.Add(lazerDialogue[i]);
+                Debug.Log("Adding Lazer Dialogues");
+                dialogueBox.Dialogue(lazerDialogue[0]);
+                for (int i = 1; i < lazerDialogue.Length - 1; i++)
+                {
+                    randomLazerDialogue.Add(lazerDialogue[i]);
+                }
             }
         }
         else
         {
-            int rndDialogue = Random.Range(0, randomLazerDialogue.Count);
-            dialogueBox.Dialogue(lazerDialogue[rndDialogue]);
-            randomLazerDialogue.Remove(lazerDialogue[rndDialogue]);
-            Debug.Log("Removing Lazer Dialogues");
+            if (originalEnemyBase)
+            {
+                int rndDialogue = Random.Range(0, randomLazerDialogue.Count);
+                dialogueBox.Dialogue(lazerDialogue[rndDialogue]);
+                randomLazerDialogue.Remove(lazerDialogue[rndDialogue]);
+                Debug.Log("Removing Lazer Dialogues");
+            }
         }
         StartCoroutine(FireLazer(lazerInterval, lazerDuration, false, waveNum));
     }
@@ -173,6 +203,11 @@ public class MissileLauncher : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, arrivalLocation, arrivalSpeed);
             yield return null;
         }
+        if (!originalEnemyBase)
+        {
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
+            transform.Rotate(0, 180, 0);
+        }
         arrived = true;
         GetComponentInChildren<Vibration>().Vibrate(true);
         if (GetComponent<WaveManager>() != null)
@@ -183,6 +218,10 @@ public class MissileLauncher : MonoBehaviour
         {
             Debug.Log("Missing WaveManager script on this component!");
         }
+    }
+    public void SetArrivalLocation(Vector3 location)
+    {
+        arrivalLocation = location;
     }
 }
 
