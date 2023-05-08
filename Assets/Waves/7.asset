@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 100
   endingTimeBuffer: 2
-  waveElapsed: 30.794828
+  waveElapsed: 97.5018
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
       type: 3}
     spawnType: 1
     delayAtBeginningOfWave: 0
-    majorSpawnRate: 10
-    minorSpawnRate: 4
+    majorSpawnRate: 12
+    minorSpawnRate: 6
   - objectID: 0
     objectToSpawn: {fileID: 4177883613113444860, guid: e9ceb1ca2833d0547a9d02ae6e9939a4,
       type: 3}
@@ -36,8 +36,8 @@ MonoBehaviour:
       type: 3}
     spawnType: 0
     delayAtBeginningOfWave: 5
-    majorSpawnRate: 5
-    minorSpawnRate: 5
+    majorSpawnRate: 6
+    minorSpawnRate: 6
   - objectID: 0
     objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
       type: 3}

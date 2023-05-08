@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] bool testSingleWave;
     [SerializeField] WaveScriptableObject testWave;
     int activeWave = 0;
+    public bool gameComplete;
 
     private void Start()
     {
@@ -44,7 +45,10 @@ public class WaveManager : MonoBehaviour
             if (!testSingleWave) waves[activeWave].waveElapsed += Time.deltaTime;
             else testWave.waveElapsed += Time.deltaTime;
         }
-
+        if (activeWave == 6 && WaveComplete(activeWave, waves[activeWave].endingTimeBuffer))
+        {
+            gameComplete = true;
+        }
     }
     public void StartFirstWave()
     {

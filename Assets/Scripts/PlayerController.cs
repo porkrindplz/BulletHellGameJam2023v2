@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3[] turretOffsets;
     [SerializeField] GameObject[] turretBase;
     bool turretsActivatedFinal;
+    [SerializeField] GameObject dialogueBox;
+    [SerializeField] CharacterDialogue endDialogue;
 
 
     private void Start()
@@ -61,22 +63,40 @@ public class PlayerController : MonoBehaviour
         else Time.timeScale = 1;
         if (GameObject.Find("Enemy").GetComponent<WaveManager>().GetWaveNum() == 6 && !turretsActivatedFinal)
         {
-            GetComponent<EnergyScript>().ReplenishEnergy(50);
-            foreach (GameObject turret in turrets)
-            {
-                if (!turret.activeInHierarchy)
-                {
-                    turret.SetActive(true);
-                }
-            }
-            foreach (GameObject tBase in turretBase)
-            {
-                if (!tBase.activeInHierarchy)
-                    tBase.SetActive(true);
-            }
+            StartCoroutine(AddTurrets());
             turretsActivatedFinal = true;
+
+        }
+        if (GameObject.Find("Enemy").GetComponent<WaveManager>().gameComplete)
+        {
+            StartCoroutine(EndDialogue());
+            gameObject.transform.Translate(0, 100, 0 * Time.deltaTime);
+
         }
 
+    }
+    IEnumerator EndDialogue()
+    {
+        yield return null;
+
+        dialogueBox.GetComponent<UIInGameDialogue>().Dialogue(endDialogue);
+    }
+    IEnumerator AddTurrets()
+    {
+        yield return new WaitForSeconds(2);
+        GetComponent<EnergyScript>().ReplenishEnergy(50);
+        foreach (GameObject turret in turrets)
+        {
+            if (!turret.activeInHierarchy)
+            {
+                turret.SetActive(true);
+            }
+        }
+        foreach (GameObject tBase in turretBase)
+        {
+            if (!tBase.activeInHierarchy)
+                tBase.SetActive(true);
+        }
     }
     void FireControl()
     {
@@ -139,7 +159,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 direction = turretPoint + turretOffsets[i] - turrets[i].transform.position;
                 Quaternion newRot = Quaternion.LookRotation(direction);
 
-                turrets[i].transform.rotation = Quaternion.Lerp(turrets[i].transform.rotation, newRot, 1 * Time.deltaTime);
+                turrets[i].transform.rotation = Quaternion.Lerp(turrets[i].transform.rotation, newRot, 4 * Time.deltaTime);
             }
         }
     }

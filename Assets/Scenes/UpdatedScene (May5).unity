@@ -541,6 +541,11 @@ PrefabInstance:
       objectReference: {fileID: 1676858464}
     - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 389085688}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 379135871}
@@ -556,6 +561,16 @@ PrefabInstance:
       objectReference: {fileID: 1744961398}
     - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
+      propertyPath: endDialogue.dialogue
+      value: Initiate warpdrive!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: endDialogue.textTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
       propertyPath: turretBase.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -569,6 +584,22 @@ PrefabInstance:
       propertyPath: turretBase.Array.data[1]
       value: 
       objectReference: {fileID: 399529291}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: endDialogue.characterToTalk
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044,
+        type: 2}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: turretOffsets.Array.data[1].x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: turretOffsets.Array.data[2].x
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1078799551221187273, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
       propertyPath: m_RootOrder

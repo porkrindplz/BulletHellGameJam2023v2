@@ -20,7 +20,7 @@ public class SpawnObjects : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        int rndOffset = Random.Range(10, 25);
+        int rndOffset = Random.Range(15, 20);
         int rndSide = Random.Range(-1, 2);
         targetPositionOffset = Vector3.right * rndOffset * rndSide;
     }
@@ -29,7 +29,7 @@ public class SpawnObjects : MonoBehaviour
     void Update()
     {
         if (startedSpawning) return;
-        transform.LookAt(player.position + targetPositionOffset);
+        transform.LookAt(player.position + targetPositionOffset - (Vector3.right * -5));
         transform.position += transform.forward * forwardSpeed * Time.deltaTime;
         if (Vector3.Distance(transform.position, player.position + targetPositionOffset) <= spawnRange)
         {
