@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 100
   endingTimeBuffer: 2
-  waveElapsed: 97.5018
-  waveStarted: 1
+  waveElapsed: 0
+  waveStarted: 0
   objectsToSpawn:
   - objectID: 0
     objectToSpawn: {fileID: 2273941340655759902, guid: 543b395e249d8fb4981c4912189befa8,
@@ -49,8 +49,8 @@ MonoBehaviour:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: Second enemy vessel approaching!
     textTime: 3
-    complete: 1
+    complete: 0
   - characterToTalk: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044, type: 2}
     dialogue: Bring all weapons online, this is it!
     textTime: 3
-    complete: 1
+    complete: 0

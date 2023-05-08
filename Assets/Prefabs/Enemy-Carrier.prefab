@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f71e141db8f846b6eedee7d8798e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealth: 400
+  initHealth: 350
   deathEffect: {fileID: 6601844061938672994, guid: 0d745dbde4fa9604b91cd3ef9242fd0f,
     type: 3}
   damageFlashArea: {fileID: 6401127020330365811}
@@ -209,7 +209,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8ed0ee9644cc1804381a28e7dedf18dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7a3c1df5441283841b922cd566db678b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     bool turretsActivatedFinal;
     [SerializeField] GameObject dialogueBox;
     [SerializeField] CharacterDialogue endDialogue;
+    [SerializeField] GameObject endScene;
 
 
     private void Start()
@@ -80,10 +82,17 @@ public class PlayerController : MonoBehaviour
         yield return null;
 
         dialogueBox.GetComponent<UIInGameDialogue>().Dialogue(endDialogue);
+        StartCoroutine(EndScene());
+    }
+    IEnumerator EndScene()
+    {
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("EndScene");
+        endScene.GetComponent<UIFadeInOut>().FadeOut(3);
     }
     IEnumerator AddTurrets()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         GetComponent<EnergyScript>().ReplenishEnergy(50);
         foreach (GameObject turret in turrets)
         {
