@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float initHealth = 10;
+    public float initHealth = 100;
     [SerializeField] GameObject deathEffect;
     [SerializeField] GameObject damageFlashArea; //the attached object will flash red when hit
     [SerializeField] float damageFlashTime = 0.05f; //length of red flash on hit

@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
+    Slider HealthSlider;
     Health player;
-    void Start()
+
+    //get the Slider component
+    public void Start()
     {
+
         if (GameObject.Find("Player").GetComponent<Health>() != null)
+        {
+            HealthSlider = GetComponent<Slider>();
             player = GameObject.Find("Player").GetComponent<Health>();
+            HealthSlider.maxValue = player.initHealth;
+            HealthSlider.value = player.initHealth;
+
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = player.GetHealth().ToString();
+        HealthSlider.value = player.GetHealth();
+
     }
 }
