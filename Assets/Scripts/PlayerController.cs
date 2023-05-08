@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
             }
             foreach (GameObject tBase in turretBase)
             {
-                tBase.SetActive(true);
+                if (!tBase.activeInHierarchy)
+                    tBase.SetActive(true);
             }
             turretsActivatedFinal = true;
         }
