@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] MinigunRotation[] minigunSpin;
     [SerializeField] bool disableControls;
     [SerializeField] Vector3[] turretOffsets;
+    [SerializeField] GameObject[] turretBase;
     bool turretsActivatedFinal;
 
 
@@ -68,9 +69,9 @@ public class PlayerController : MonoBehaviour
                     turret.SetActive(true);
                 }
             }
-            foreach (MinigunRotation minigun in minigunSpin)
+            foreach (GameObject tBase in turretBase)
             {
-                minigun.transform.parent.gameObject.SetActive(true);
+                tBase.SetActive(true);
             }
             turretsActivatedFinal = true;
         }
