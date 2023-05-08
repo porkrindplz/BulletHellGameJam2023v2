@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 25
   endingTimeBuffer: 0
-  waveElapsed: 25.005346
+  waveElapsed: 25.002632
   waveStarted: 0
   objectsToSpawn:
   - objectID: 0
@@ -31,6 +31,13 @@ MonoBehaviour:
     delayAtBeginningOfWave: 10
     majorSpawnRate: 3
     minorSpawnRate: 3
+  - objectID: 0
+    objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
+      type: 3}
+    spawnType: 1
+    delayAtBeginningOfWave: 10
+    majorSpawnRate: 0.2
+    minorSpawnRate: 0.2
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: Sir, incoming enemy vessel.

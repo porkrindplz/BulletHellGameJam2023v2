@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 25
   endingTimeBuffer: 0
-  waveElapsed: 25.002876
+  waveElapsed: 25.007565
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0
@@ -24,6 +24,13 @@ MonoBehaviour:
     delayAtBeginningOfWave: 0
     majorSpawnRate: 1
     minorSpawnRate: 1
+  - objectID: 0
+    objectToSpawn: {fileID: 2273941340655759902, guid: 543b395e249d8fb4981c4912189befa8,
+      type: 3}
+    spawnType: 0
+    delayAtBeginningOfWave: 0
+    majorSpawnRate: 4
+    minorSpawnRate: 4
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: They don't let up!

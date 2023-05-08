@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 25
   endingTimeBuffer: 2
-  waveElapsed: 27.002054
+  waveElapsed: 27.005344
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
       type: 3}
     spawnType: 0
     delayAtBeginningOfWave: 5
-    majorSpawnRate: 1
-    minorSpawnRate: 1
+    majorSpawnRate: 0.5
+    minorSpawnRate: 0.5
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 9cc67b89c162015489f3e800c514894c, type: 2}
     dialogue: Keep focused...

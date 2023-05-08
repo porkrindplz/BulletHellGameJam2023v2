@@ -809,6 +809,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 477053263, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 477053263, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 45348589406551520, guid: cfa266846dd30194abdfc92e62367c7b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -933,16 +941,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099613308397241706, guid: cfa266846dd30194abdfc92e62367c7b,
-        type: 3}
-      propertyPath: m_Value
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099613308397241706, guid: cfa266846dd30194abdfc92e62367c7b,
-        type: 3}
-      propertyPath: m_MaxValue
-      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4116817136624652738, guid: cfa266846dd30194abdfc92e62367c7b,
         type: 3}

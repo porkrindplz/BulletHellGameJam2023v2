@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 20
   endingTimeBuffer: 5
-  waveElapsed: 25.006742
+  waveElapsed: 25.00786
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0
@@ -38,6 +38,13 @@ MonoBehaviour:
     delayAtBeginningOfWave: 5
     majorSpawnRate: 4
     minorSpawnRate: 4
+  - objectID: 0
+    objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
+      type: 3}
+    spawnType: 0
+    delayAtBeginningOfWave: 5
+    majorSpawnRate: 1
+    minorSpawnRate: 1
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: There's just too many of them.
