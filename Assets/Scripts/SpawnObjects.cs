@@ -20,7 +20,7 @@ public class SpawnObjects : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        int rndOffset = Random.Range(20, 35);
+        int rndOffset = Random.Range(10, 25);
         int rndSide = Random.Range(-1, 2);
         targetPositionOffset = Vector3.right * rndOffset * rndSide;
     }
