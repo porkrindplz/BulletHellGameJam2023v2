@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Engineer
   m_EditorClassIdentifier: 
   character:
-    characterName: Engineer
+    characterName: Chief Engineer Sae
     portrait: {fileID: 21300000, guid: 8457de797745e7049a85395680f479af, type: 3}

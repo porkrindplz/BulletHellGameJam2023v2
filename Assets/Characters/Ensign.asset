@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Ensign
   m_EditorClassIdentifier: 
   character:
-    characterName: Ensign
+    characterName: Ensign Azuma
     portrait: {fileID: 21300000, guid: 2327011ad05acf448a44d236cb9c809a, type: 3}
