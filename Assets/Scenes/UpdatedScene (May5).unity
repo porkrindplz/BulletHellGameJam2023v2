@@ -1130,6 +1130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795251290533384519, guid: ef0ffb6ee7dfa6441ad3aba82278845f,
         type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795251290533384519, guid: ef0ffb6ee7dfa6441ad3aba82278845f,
+        type: 3}
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
