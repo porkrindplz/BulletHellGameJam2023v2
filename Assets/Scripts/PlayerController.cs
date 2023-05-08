@@ -111,11 +111,11 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(GetMouseRay(), 3, out hit, 200, enemyLayers)) //Cursor over enemy
         {
-            Cursor.SetCursor(enemyTargetCursor, cursorHotSpot, CursorMode.Auto);
+            Cursor.SetCursor(enemyTargetCursor, cursorHotSpot, CursorMode.ForceSoftware);
         }
         else
         {
-            Cursor.SetCursor(defaultCursor, cursorHotSpot, CursorMode.Auto);
+            Cursor.SetCursor(defaultCursor, cursorHotSpot, CursorMode.ForceSoftware);
         }
     }
     private static Ray GetMouseRay()

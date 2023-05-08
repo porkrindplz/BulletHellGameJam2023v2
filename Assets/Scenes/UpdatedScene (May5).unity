@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7326b8cc9750ef342a4ebe81cb0a8a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalWaveOfFirstPart: 0
+  finalWaveOfFirstPart: 5
   firstEnemyBase: {fileID: 2064389277}
   enemyPrefab: {fileID: 5079202829642880784, guid: b55efc663475ae14e88df8f14cc0c749,
     type: 3}
@@ -959,6 +959,10 @@ PrefabInstance:
       propertyPath: _EnergyDisplay
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1845752630, guid: a7e113fac7dcecc4d949065d9c90ba32, type: 3}
+      propertyPath: currentMaxEnergy
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1078799549785704311, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
       propertyPath: m_TagString
@@ -986,6 +990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 603a689ea3aaf1f45b86aa444774bbda, type: 3}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
       propertyPath: rotationSpeed
       value: 180
       objectReference: {fileID: 0}
@@ -994,6 +1003,11 @@ PrefabInstance:
       propertyPath: cameraAimGroup
       value: 
       objectReference: {fileID: 717175974}
+    - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: enemyTargetCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 1d7e28e836edb8447b37aae6cc48161c, type: 3}
     - target: {fileID: 1078799551221187272, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}
       propertyPath: cameraAimGroupClose
@@ -1063,6 +1077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: -2.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078799551221187279, guid: a7e113fac7dcecc4d949065d9c90ba32,
+        type: 3}
+      propertyPath: initHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1078799551221187279, guid: a7e113fac7dcecc4d949065d9c90ba32,
         type: 3}

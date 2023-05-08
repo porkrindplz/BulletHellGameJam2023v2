@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f71e141db8f846b6eedee7d8798e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHealth: 200
+  initHealth: 400
   deathEffect: {fileID: 6601844061938672994, guid: 0d745dbde4fa9604b91cd3ef9242fd0f,
     type: 3}
   damageFlashArea: {fileID: 6401127020330365811}
@@ -156,6 +156,7 @@ MonoBehaviour:
     complete: 0
   halfHealthDialogue: []
   almostDeadDialogue: []
+  healthAudio: {fileID: 0}
 --- !u!114 &-7088487486866123733
 MonoBehaviour:
   m_ObjectHideFlags: 0

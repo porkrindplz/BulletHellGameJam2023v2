@@ -58,10 +58,13 @@ public class Missile : MonoBehaviour
     {
         if (movementMode == MovementMode.RotateAroundObject)
         {
-            RotateAroundObject(rotationPoint);
+            if (Vector3.Distance(transform.position, target.position) < 20) { movementMode = MovementMode.Straight; }
+            else
+                RotateAroundObject(rotationPoint);
         }
         if (target == null || movementMode == MovementMode.NoMovement)
         {
+
             return;
         }
 
