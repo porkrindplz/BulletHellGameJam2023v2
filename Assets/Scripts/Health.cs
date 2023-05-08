@@ -53,6 +53,7 @@ public class Health : MonoBehaviour
     {
         if (temporarilyInvincible) return;
         currentHealth -= amount;
+        if (healthAudio != null) healthAudio.Play();
         if (currentHealth <= 0)
         {
             if (!playerDead)

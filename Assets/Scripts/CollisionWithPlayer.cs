@@ -9,16 +9,16 @@ public class CollisionWithPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.transform.root.GetComponent<Health>().DealDamage(1);
-            Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<Health>().DealDamage(1);
+            Destroy(this.gameObject);
         }
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.transform.root.GetComponent<Health>().DealDamage(1);
-            Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<Health>().DealDamage(1);
+            Destroy(this.gameObject);
         }
     }
 }

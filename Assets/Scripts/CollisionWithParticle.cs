@@ -18,6 +18,7 @@ public class CollisionWithParticle : MonoBehaviour
             {
                 gameObject.transform.root.GetComponent<Health>().DealDamage(1);
             }
+            else if (gameObject.GetComponent<Health>() != null) GetComponent<Health>().DealDamage(1);
         }
     }
 }

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 30
   endingTimeBuffer: 0
-  waveElapsed: 6.0201125
+  waveElapsed: 27.375713
   waveStarted: 0
   objectsToSpawn:
   - objectID: 0
     objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
       type: 3}
     spawnType: 0
-    delayAtBeginningOfWave: 0
+    delayAtBeginningOfWave: 20
     majorSpawnRate: 0.5
     minorSpawnRate: 0.5
   - objectID: 0
@@ -31,16 +31,23 @@ MonoBehaviour:
     delayAtBeginningOfWave: 10
     majorSpawnRate: 4
     minorSpawnRate: 4
+  - objectID: 0
+    objectToSpawn: {fileID: 2032331197373001737, guid: 863b0cf29c45f5f49a5e29c0dfc7e890,
+      type: 3}
+    spawnType: 0
+    delayAtBeginningOfWave: 0
+    majorSpawnRate: 1
+    minorSpawnRate: 1
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: Sir, we can't seem to shake it!
     textTime: 3
-    complete: 0
+    complete: 1
   - characterToTalk: {fileID: 11400000, guid: 7ef6e52fcf739a14d83cab10d4fea42e, type: 2}
     dialogue: Engineering needs time to reroute energy to the warp drive.
     textTime: 3
-    complete: 0
+    complete: 1
   - characterToTalk: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044, type: 2}
     dialogue: Man the stations, we need to hold our ground!
     textTime: 3
-    complete: 0
+    complete: 1
