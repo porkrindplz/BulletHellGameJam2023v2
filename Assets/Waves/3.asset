@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba36cd3e53db404baa84afa4e9662c9, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  waveLength: 30
+  waveLength: 25
   endingTimeBuffer: 2
-  waveElapsed: 32.01989
+  waveElapsed: 32.007416
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba36cd3e53db404baa84afa4e9662c9, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  waveLength: 30
+  waveLength: 25
   endingTimeBuffer: 0
-  waveElapsed: 0
+  waveElapsed: 30.000523
   waveStarted: 0
   objectsToSpawn:
   - objectID: 0
@@ -35,12 +35,12 @@ MonoBehaviour:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
     dialogue: Sir, we can't seem to shake it!
     textTime: 3
-    complete: 0
+    complete: 1
   - characterToTalk: {fileID: 11400000, guid: 7ef6e52fcf739a14d83cab10d4fea42e, type: 2}
     dialogue: Engineering needs time to reroute energy to the warp drive.
     textTime: 3
-    complete: 0
+    complete: 1
   - characterToTalk: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044, type: 2}
     dialogue: Man the stations, we need to hold our ground!
     textTime: 3
-    complete: 0
+    complete: 1

@@ -8,9 +8,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 742611963, guid: 5cb6bd4524ae42444a8be2354b19f70a, type: 3}
+      propertyPath: waves.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 742611963, guid: 5cb6bd4524ae42444a8be2354b19f70a, type: 3}
       propertyPath: waves.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 044831eecf4377944835a33e474bb510,
+      objectReference: {fileID: 11400000, guid: 21dae072df776ff4cb38e635e025a24e,
         type: 2}
     - target: {fileID: 742611963, guid: 5cb6bd4524ae42444a8be2354b19f70a, type: 3}
       propertyPath: waves.Array.data[1]
@@ -216,6 +220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: controlFireHere
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535710458400028165, guid: 5cb6bd4524ae42444a8be2354b19f70a,
+        type: 3}
+      propertyPath: arrivalLocation.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4535710458400028165, guid: 5cb6bd4524ae42444a8be2354b19f70a,
         type: 3}

@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject[] turrets;
     [SerializeField] float turretRange;
     [SerializeField] float rotationSpeed;
-    [SerializeField] MinigunRotation minigunSpin;
+    [SerializeField] MinigunRotation[] minigunSpin;
     [SerializeField] bool disableControls;
+    [SerializeField] Vector3[] turretOffsets;
 
 
     private void Start()
@@ -51,24 +52,48 @@ public class PlayerController : MonoBehaviour
         if (disableControls) return;
         TurretControl();
         FireControl();
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            AimDownSights(true);
-        }
-        else AimDownSights(false);
         if (Input.GetKey(KeyCode.A))
         {
             Time.timeScale = 4;
         }
         else Time.timeScale = 1;
+        if (GameObject.Find("Enemy").GetComponent<WaveManager>().GetWaveNum() == 6)
+        {
+            foreach (GameObject turret in turrets)
+            {
+                if (!turret.activeInHierarchy)
+                {
+                    turret.SetActive(true);
+                }
+            }
+            foreach (MinigunRotation minigun in minigunSpin)
+            {
+                if (!minigun.transform.parent.gameObject.activeInHierarchy)
+                {
+                    minigun.transform.parent.gameObject.SetActive(true);
+                }
+            }
+        }
 
     }
     void FireControl()
     {
         if (Input.GetMouseButtonDown(0))
-            minigunSpin.ActivateRotation(true);
+        {
+            foreach (MinigunRotation minigun in minigunSpin)
+            {
+                if (minigun.enabled)
+                    minigun.ActivateRotation(true);
+            }
+        }
         else if (Input.GetMouseButtonUp(0))
-            minigunSpin.ActivateRotation(false);
+        {
+            foreach (MinigunRotation minigun in minigunSpin)
+            {
+                if (minigun.enabled)
+                    minigun.ActivateRotation(false);
+            }
+        }
     }
 
     private void AimDownSights(bool active)
@@ -85,11 +110,11 @@ public class PlayerController : MonoBehaviour
 
     void TurretControl()
     {
-        foreach (GameObject turret in turrets)
+        if (turrets[0])
         {
-            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, turretRange));
-            Vector3 turretDirection = targetPosition - turret.transform.position;
-            Ray ray = new Ray(turret.transform.position, transform.forward);
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, turretRange) + turretOffsets[0]);
+            Vector3 turretDirection = targetPosition - turrets[0].transform.position;
+            Ray ray = new Ray(turrets[0].transform.position, transform.forward);
             RaycastHit turretHit;
 
             if (Physics.Raycast(GetMouseRay(), out turretHit, turretRange, enemyLayers))
@@ -98,11 +123,21 @@ public class PlayerController : MonoBehaviour
 
             cameraTarget.transform.position = turretPoint;
 
-            if (immediateAim) turret.transform.LookAt(turretPoint);
+            if (immediateAim) turrets[0].transform.LookAt(turretPoint + turretOffsets[0]);
             else
             {
-                Quaternion targetRotation = Quaternion.LookRotation(turretPoint - turret.transform.position);
-                turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                Quaternion targetRotation = Quaternion.LookRotation(turretPoint - turrets[0].transform.position);
+                turrets[0].transform.rotation = Quaternion.RotateTowards(turrets[0].transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            }
+        }
+        if (GameObject.Find("Enemy").GetComponent<WaveManager>().GetWaveNum() == 6)
+        {
+            for (int i = 1; i < turrets.Length; i++)
+            {
+                Vector3 direction = turretPoint + turretOffsets[i] - turrets[i].transform.position;
+                Quaternion newRot = Quaternion.LookRotation(direction);
+
+                turrets[i].transform.rotation = Quaternion.Lerp(turrets[i].transform.rotation, newRot, 1 * Time.deltaTime);
             }
         }
     }
@@ -118,7 +153,7 @@ public class PlayerController : MonoBehaviour
             Cursor.SetCursor(defaultCursor, cursorHotSpot, CursorMode.ForceSoftware);
         }
     }
-    private static Ray GetMouseRay()
+    private static Ray GetMouseRay(Vector3 offset = default(Vector3))
     {
         return Camera.main.ScreenPointToRay(Input.mousePosition);
     }

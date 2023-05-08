@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba36cd3e53db404baa84afa4e9662c9, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  waveLength: 30
+  waveLength: 25
   endingTimeBuffer: 0
-  waveElapsed: 30.000692
+  waveElapsed: 30.009207
   waveStarted: 1
   objectsToSpawn:
   - objectID: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
       type: 3}
     spawnType: 0
     delayAtBeginningOfWave: 0
-    majorSpawnRate: 1
-    minorSpawnRate: 1
+    majorSpawnRate: 1.25
+    minorSpawnRate: 1.25
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044, type: 2}
     dialogue: Man I need to Shit
