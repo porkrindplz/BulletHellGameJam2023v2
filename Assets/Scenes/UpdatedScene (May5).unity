@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498235579, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 125
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 498235579, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
       propertyPath: m_SizeDelta.y
@@ -648,6 +648,14 @@ PrefabInstance:
     - target: {fileID: 1620602816, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620602816, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620602816, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1620602816, guid: cfa266846dd30194abdfc92e62367c7b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1003,6 +1011,21 @@ PrefabInstance:
         type: 3}
       propertyPath: originalEnemyBase
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535710458400028165, guid: 5cb6bd4524ae42444a8be2354b19f70a,
+        type: 3}
+      propertyPath: lazerDialogue.Array.data[0].dialogue
+      value: Incoming Laser! Shields!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535710458400028165, guid: 5cb6bd4524ae42444a8be2354b19f70a,
+        type: 3}
+      propertyPath: lazerDialogue.Array.data[1].dialogue
+      value: Enemy laser charging!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535710458400028165, guid: 5cb6bd4524ae42444a8be2354b19f70a,
+        type: 3}
+      propertyPath: lazerDialogue.Array.data[3].dialogue
+      value: Shields up!
       objectReference: {fileID: 0}
     - target: {fileID: 4535710458400028166, guid: 5cb6bd4524ae42444a8be2354b19f70a,
         type: 3}

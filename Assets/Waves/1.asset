@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 25
   endingTimeBuffer: 0
-  waveElapsed: 30.000523
+  waveElapsed: 25.005177
   waveStarted: 0
   objectsToSpawn:
   - objectID: 0
@@ -33,14 +33,18 @@ MonoBehaviour:
     minorSpawnRate: 4
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
-    dialogue: Sir, we can't seem to shake it!
+    dialogue: Sir, incoming enemy vessel.
     textTime: 3
     complete: 1
   - characterToTalk: {fileID: 11400000, guid: 7ef6e52fcf739a14d83cab10d4fea42e, type: 2}
-    dialogue: Engineering needs time to reroute energy to the warp drive.
+    dialogue: We need time to reinitiate warp drives.
     textTime: 3
     complete: 1
   - characterToTalk: {fileID: 11400000, guid: 4e31602ad9a68f348985fa6816003044, type: 2}
-    dialogue: Man the stations, we need to hold our ground!
+    dialogue: Battle Stations, bring the Gatling Cannon online.
+    textTime: 3
+    complete: 1
+  - characterToTalk: {fileID: 11400000, guid: 9cc67b89c162015489f3e800c514894c, type: 2}
+    dialogue: We have limited shield power, use it wisely!
     textTime: 3
     complete: 1

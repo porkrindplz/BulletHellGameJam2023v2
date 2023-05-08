@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 100
   endingTimeBuffer: 2
-  waveElapsed: 53.43144
+  waveElapsed: 47.95442
   waveStarted: 0
   objectsToSpawn:
   - objectID: 0
@@ -52,4 +52,8 @@ MonoBehaviour:
     delayAtBeginningOfWave: 80
     majorSpawnRate: 1
     minorSpawnRate: 1
-  characterDialogue: []
+  characterDialogue:
+  - characterToTalk: {fileID: 11400000, guid: 337958396c9770e458d3e1abeb1b42d6, type: 2}
+    dialogue: 
+    textTime: 0
+    complete: 0
