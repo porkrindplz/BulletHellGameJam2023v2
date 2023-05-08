@@ -9,7 +9,7 @@ public class shieldcontroller : MonoBehaviour
 
     //Where to put the Energy UI
     [SerializeField] EnergyDisplay _EnergyDisplay;
-    
+
     // Assign the shield prefab to this field in the Inspector.
     public GameObject shieldPrefab;
 
@@ -25,13 +25,19 @@ public class shieldcontroller : MonoBehaviour
     private void Update()
     {
         // Check if the space key is being held down.
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && player.Energy() > 0)
         {
             // If there isn't a shield active, create a new one.
             if (currentShield == null)
             {
                 currentShield = Instantiate(shieldPrefab, transform.position, transform.rotation);
             }
+            PlayerUseEnergy(10f);
+        }
+        else if (player.Energy() <= 0)
+        {
+            Destroy(currentShield);
+            currentShield = null;
         }
         else
         {
@@ -42,12 +48,8 @@ public class shieldcontroller : MonoBehaviour
                 currentShield = null;
             }
         }
-        
-        // Energy Input
-        if (Input.GetKey(KeyCode.Space))
-        {
-            PlayerUseEnergy(10f);
-        }    
+
+
     }
 
 

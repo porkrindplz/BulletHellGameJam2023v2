@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] MinigunRotation[] minigunSpin;
     [SerializeField] bool disableControls;
     [SerializeField] Vector3[] turretOffsets;
+    bool turretsActivatedFinal;
 
 
     private void Start()
@@ -57,8 +58,9 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 4;
         }
         else Time.timeScale = 1;
-        if (GameObject.Find("Enemy").GetComponent<WaveManager>().GetWaveNum() == 6)
+        if (GameObject.Find("Enemy").GetComponent<WaveManager>().GetWaveNum() == 6 && !turretsActivatedFinal)
         {
+            GetComponent<EnergyScript>().ReplenishEnergy(50);
             foreach (GameObject turret in turrets)
             {
                 if (!turret.activeInHierarchy)
@@ -68,11 +70,9 @@ public class PlayerController : MonoBehaviour
             }
             foreach (MinigunRotation minigun in minigunSpin)
             {
-                if (!minigun.transform.parent.gameObject.activeInHierarchy)
-                {
-                    minigun.transform.parent.gameObject.SetActive(true);
-                }
+                minigun.transform.parent.gameObject.SetActive(true);
             }
+            turretsActivatedFinal = true;
         }
 
     }

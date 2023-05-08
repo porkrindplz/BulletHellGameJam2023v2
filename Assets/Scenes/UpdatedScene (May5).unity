@@ -1133,6 +1133,11 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5795251290533384519, guid: ef0ffb6ee7dfa6441ad3aba82278845f,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5795251290533384632, guid: ef0ffb6ee7dfa6441ad3aba82278845f,
         type: 3}
       propertyPath: m_Name
@@ -1268,12 +1273,12 @@ PrefabInstance:
     - target: {fileID: 7202307760715632239, guid: b79fa138ef747814a91dfa35f8aa1d09,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.048874907
+      value: -0.048874956
       objectReference: {fileID: 0}
     - target: {fileID: 7202307760715632239, guid: b79fa138ef747814a91dfa35f8aa1d09,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011431726
+      value: 0.011431737
       objectReference: {fileID: 0}
     - target: {fileID: 7202307760715632239, guid: b79fa138ef747814a91dfa35f8aa1d09,
         type: 3}

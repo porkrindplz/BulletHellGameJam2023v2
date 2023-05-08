@@ -41,4 +41,8 @@ public class EnergyScript : MonoBehaviour
         }
 
     }
+    public void ReplenishEnergy(float amount)
+    {
+        currentEnergy = Mathf.Min(currentEnergy + amount, MaxEnergy());
+    }
 }
