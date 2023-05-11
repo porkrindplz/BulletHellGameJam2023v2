@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveLength: 25
   endingTimeBuffer: 2
-  waveElapsed: 27.008972
-  waveStarted: 1
+  waveElapsed: 0
+  waveStarted: 0
   objectsToSpawn:
   - objectID: 0
     objectToSpawn: {fileID: 7581648178714466735, guid: 2d092d9ed10c7d74a9dccf37d6f617ca,
@@ -36,14 +36,14 @@ MonoBehaviour:
       type: 3}
     spawnType: 1
     delayAtBeginningOfWave: 0
-    majorSpawnRate: 1
-    minorSpawnRate: 1
+    majorSpawnRate: 5
+    minorSpawnRate: 5
   characterDialogue:
   - characterToTalk: {fileID: 11400000, guid: 9cc67b89c162015489f3e800c514894c, type: 2}
     dialogue: New enemy Carrier type detected.
     textTime: 3
-    complete: 1
+    complete: 0
   - characterToTalk: {fileID: 11400000, guid: 9cc67b89c162015489f3e800c514894c, type: 2}
     dialogue: Shoot it down before it overwhelms us.
     textTime: 3
-    complete: 1
+    complete: 0
